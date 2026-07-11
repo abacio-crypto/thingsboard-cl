@@ -1,9 +1,0 @@
-      - name: Run CodeLogic Scan
-        uses: CodeLogicIncEngineering/codelogic-java-agent-github-action@master
-        with:
-          codelogic_host:   ${{ vars.CODELOGIC_HOST }}
-          agent_uuid:       ${{ secrets.AGENT_UUID }}
-          agent_password:   ${{ secrets.AGENT_PASSWORD }}
-          application_name: "Thingsboard"
-          method_filter:    "org.thingsboard"
-          expunge_scan_sessions: true
