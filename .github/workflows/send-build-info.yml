@@ -1,0 +1,12 @@
+- name: Send CodeLogic Build Info
+  if: always()
+  uses: CodeLogicIncEngineering/codelogic-send-build-info-github-action@master
+  with:
+    codelogic_host:   ${{ vars.CODELOGIC_HOST }}
+    agent_uuid:       ${{ secrets.AGENT_UUID }}
+    agent_password:   ${{ secrets.AGENT_PASSWORD }}
+    job_name:         "CodeLogic Send Build Info"
+    build_number:     "${{ github.run_number }}"
+    build_status:     "${{ job.status }}"
+    log_file:         "/github/workspace/build.log"
+    log_lines:        "50000"
